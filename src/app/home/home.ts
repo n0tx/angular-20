@@ -10,4 +10,10 @@ import { Greeting } from "../components/greeting/greeting";
 export class Home {
     protected title = signal("home works!");
     pesanHome = signal("Hello dari home!");
+
+    keyUpHandler(event: KeyboardEvent) {
+        // console.log("user sedang mengetik key: " + event.key); // unidentified
+        console.log("user sedang mengetik key: " + event.keyCode); // 229 atau string s
+        // console.log("user sedang mengetik key: " + event.which); // 229 atau string s
+    }
 }
