@@ -1,1 +1,5 @@
 <p> {{ title() }} </p>
+<app-greeting [greeting] = "'Pesan hardcoded dari home.html ke greeting input
+component'"></app-greeting> <!-- meneruskan data dari parent ke anak dengan hardcoded -->
+<app-greeting [greeting] = "pesanHome()"></app-greeting> <!-- meneruskan data dari
+parent ke anak dengan variabel -->
