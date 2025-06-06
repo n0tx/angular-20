@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { TodoItem } from "../components/todo-item/todo-item";
 
 @Component({
-  selector: 'app-todos',
-  imports: [],
-  templateUrl: './todos.html',
-  styleUrl: './todos.css'
+    selector: "app-todos",
+    imports: [TodoItem],
+    templateUrl: "./todos.html",
+    styleUrl: "./todos.css"
 })
-export class Todos {
-
-}
+export class Todos {}
