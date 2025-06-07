@@ -6,7 +6,7 @@ parent ke anak dengan variabel -->
 <input type="text" (keyup) = "keyUpHandler($event)">
 <app-counter></app-counter>
 <div>
-  @for(todo of todoItems(); track $index) {
+  @for(todo of todoItems(); track todo.id) {
     <p>{{ todo.id }} : {{ todo.title }}</p>
   }  
 </div>
