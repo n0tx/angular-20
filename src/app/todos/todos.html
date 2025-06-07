@@ -5,4 +5,7 @@
 @for(todo of todoItems(); track todo.id) {
   <p>{{ todo.id }} : {{ todo.title }}</p>
 }
+@for(todoApi of todoItemsFromApi(); track todoApi.id) {
+  <p>{{ todoApi.id }} : {{ todoApi.title }}</p>
+}
 <app-todo-item></app-todo-item>
