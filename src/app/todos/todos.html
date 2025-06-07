@@ -5,7 +5,12 @@
 @for(todo of todoItems(); track todo.id) {
   <p>{{ todo.id }} : {{ todo.title }}</p>
 }
+<ul class="todos">
 @for(todoApi of todoItemsFromApi(); track todoApi.id) {
-  <p>{{ todoApi.id }} : {{ todoApi.title }}</p>
+  <li class="todos__item">
+    <input id="todo-{{ todoApi.id }}" type="checkbox" [value]="todoApi.completed"/>
+    <label for="todo-{{ todoApi.id }}">{{ todoApi.title }}</label>
+  </li>
 }
+</ul>
 <app-todo-item></app-todo-item>
