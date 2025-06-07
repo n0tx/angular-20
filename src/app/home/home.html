@@ -5,3 +5,8 @@ component'"></app-greeting> <!-- meneruskan data dari parent ke anak dengan hard
 parent ke anak dengan variabel -->
 <input type="text" (keyup) = "keyUpHandler($event)">
 <app-counter></app-counter>
+<div>
+  @for(todo of todoItems(); track $index) {
+    <p>{{ todo.id }} : {{ todo.title }}</p>
+  }  
+</div>
