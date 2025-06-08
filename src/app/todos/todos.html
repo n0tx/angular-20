@@ -5,6 +5,8 @@
 @for(todo of todoItems(); track todo.id) {
   <p>{{ todo.id }} : {{ todo.title }}</p>
 }
+
+<p *ngIf="!todoItemsFromApi().length">Loading...</p>
 <ul class="todos">
 @for(todoApi of todoItemsFromApi(); track todoApi.id) {
   <li class="todos__item">
