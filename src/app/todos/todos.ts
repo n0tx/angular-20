@@ -25,4 +25,18 @@ export class Todos {
             console.log("data from APIs: ", this.todoItemsFromApi());
         });
     }
+
+    updateTodoItem(todoItem: Todo) {
+      this.todoItemsFromApi.update((todos) => {
+        return todos.map((todo) => {
+          if (todo.id === todoItem.id) {
+            return {
+              ...todo,
+              completed: !todo.completed,
+            };
+          }
+          return todo;
+        });
+      });
+    }
 }

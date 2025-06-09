@@ -15,6 +15,6 @@
     <input id="todo-{{ todoApi.id }}" type="checkbox" [value]="todoApi.completed"/>
     <label for="todo-{{ todoApi.id }}">{{ todoApi.title }}</label>
   </li> -->
-  <app-todo-item [todoItem] = "todoApi"></app-todo-item>
+  <app-todo-item (todoToggled) = "updateTodoItem($event)" [todoItem] = "todoApi"></app-todo-item>
 }
 </ul>
