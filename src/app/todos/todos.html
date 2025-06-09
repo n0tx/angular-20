@@ -9,8 +9,12 @@
 @if(!todoItemsFromApi().length) {
   <p>Loading...</p>
 }
+<form>
+  <label>Filter Todos: </label>
+  <input name="searchTerm" [(ngModel)] = "searchTerm" placeholder="Search todos..."/>
+</form>
 <ul class="todos">
-@for(todoApi of todoItemsFromApi(); track todoApi.id) {
+@for(todoApi of todoItemsFromApi() | filterTodos: searchTerm(); track todoApi.id) {
   <!-- <li class="todos__item">
     <input id="todo-{{ todoApi.id }}" type="checkbox" [value]="todoApi.completed"/>
     <label for="todo-{{ todoApi.id }}">{{ todoApi.title }}</label>
