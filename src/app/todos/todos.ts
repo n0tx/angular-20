@@ -22,7 +22,7 @@ export class Todos {
         this.todoItems.set(this.todosService.todoItems);
         console.log("todo hardcoded signal: ", this.todoItems());
 
-        this.todosService.getDataFromApi().subscribe(todos => {
+        this.todosService.getDataJsonServer().subscribe(todos => {
             // console.log("data from API: ", todos);
             this.todoItemsFromApi.set(todos);
             console.log("data from APIs: ", this.todoItemsFromApi());

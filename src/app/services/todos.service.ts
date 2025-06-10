@@ -27,4 +27,8 @@ export class TodosService {
         const url = `https://jsonplaceholder.typicode.com/todos`;
         return this.http.get<Array<Todo>>(url);
     }
+    getDataJsonServer() {
+        const url = `http://localhost:3000/todos`;
+        return this.http.get<Array<Todo>>(url);
+    }
 }
