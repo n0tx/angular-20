@@ -42,4 +42,17 @@ export class Todos {
             });
         });
     }
+
+    deleteTodoItem(todoItem: Todo) {
+        this.todosService.deleteTodoItem(todoItem.id).subscribe(() => {
+            this.todoItemsFromApi.update(todos =>
+                todos.filter(todo => todo.id !== todoItem.id)
+            );
+            /*
+            // console.log("data from API: ", todos);
+            this.todoItemsFromApi.set(todos);
+            console.log("data from APIs: ", this.todoItemsFromApi());
+            */
+        });
+    }
 }

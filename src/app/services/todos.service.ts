@@ -31,4 +31,8 @@ export class TodosService {
         const url = `http://localhost:3000/todos`;
         return this.http.get<Array<Todo>>(url);
     }
+    deleteTodoItem(id: number) {
+        const url = `http://localhost:3000/todos/${id}`;
+        return this.http.delete(url);
+    }
 }

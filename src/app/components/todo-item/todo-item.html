@@ -7,4 +7,5 @@
     (change)="this.todoClicked()"
   />
   <label for="todo-{{ todoItem().id }}">{{ todoItem().title | uppercase }}</label>
+  <button (click) = "this.deleteClicked()">Delete</button>
 </li>

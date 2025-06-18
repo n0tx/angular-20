@@ -12,8 +12,13 @@ import { UpperCasePipe } from "@angular/common";
 export class TodoItem {
     todoItem = input.required<Todo>();
     todoToggled = output<Todo>();
+    todoDeleted = output<Todo>();
 
     todoClicked() {
         this.todoToggled.emit(this.todoItem());
+    }
+    
+    deleteClicked() {
+        this.todoDeleted.emit(this.todoItem());
     }
 }
