@@ -17,8 +17,12 @@ export class TodoItem {
     todoClicked() {
         this.todoToggled.emit(this.todoItem());
     }
-    
+
     deleteClicked() {
-        this.todoDeleted.emit(this.todoItem());
+        const deleteConfirm = confirm("Yakin ingin delete?");
+        if (deleteConfirm) {
+            // this.todoDeleted.emit(this.todoItem());
+            console.log("this.todoDeleted.emit(this.todoItem())");
+        }
     }
 }
