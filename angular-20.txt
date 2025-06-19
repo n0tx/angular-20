@@ -78,3 +78,10 @@ buka remark emmit pada item-todo.ts
 buka kembali remark emit kirim input ke output
 pada todoClicked() item-todo.ts
 agar delete berfungsi lagi
+
+
+jarak text atau element dari tepi (kanan atau kiri) ke tengah
+padding-inline: 28px;
+
+tinggi header
+padding-block: 18px;
