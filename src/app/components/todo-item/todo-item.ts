@@ -21,7 +21,7 @@ export class TodoItem {
     deleteClicked() {
         const deleteConfirm = confirm("Yakin ingin delete?");
         if (deleteConfirm) {
-            // this.todoDeleted.emit(this.todoItem());
+            this.todoDeleted.emit(this.todoItem());
             console.log("this.todoDeleted.emit(this.todoItem())");
         }
     }
