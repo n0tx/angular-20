@@ -1,0 +1,80 @@
+proses delete todo-item pada list todo-item
+todo parent punya anak todo-item
+sewaktu looping list data yang diambil dari api
+todo parent assign ke item todo yaitu itemTodo di item-todo.ts
+itemTodo itu varibel input yang ada di item-todo.ts dan digunakan
+di tag komponen tido-item dan di tempelkan pada komponen parent
+yaitu todo.html
+jadi todoItem ini yang digunakan selanjutnya
+pada todo-item.ts dan todo-item.html
+
+jadiin tombol delete jadi rata 1 kolom
+atau jadi rata kanan
+
+jadi dari anak mengirimkan (output dan emit) input todoItem ke parent
+anak
+todo-item.ts
+todoItem = input.required<Todo>();
+todoDeleted = output<Todo>();
+
+sewaktu click kirim input (dari loop list itemTodo) menjadi output (todoDeleted)
+
+deleteClicked() {
+  this.todoDeleted.emit(this.todoItem());
+}
+
+todo-item.html
+(click) = "this.deleteClicked()"
+
+todo.ts
+ditampung dan di proses di fungsi parent yang akan eksekusi
+delete ke api menggunakan service
+
+deleteTodoItem(todoItem: Todo) {
+  // panggil service untuk delete data ke api
+}
+
+todo.html
+<app-todo-item
+(todoDeleted) = "deleteTodoItem($event)">
+</app-todo-item>
+
+$event itu 
+isi nya, todoItemo: Todo
+hanya nama boleh apa saja todoItemo, todoItem
+sebagai parameter $event
+
+
+buat var output di child
+data output merupakan assign dari loop parent
+yang di input pada var input child
+
+todo-item.ts
+todoItem = input.required<Todo>();
+
+todo.html
+for(todoApi of todoItemsFromApi() | filterTodos: searchTerm(); track todoApi.id) {
+  <app-todo-item
+  [todoItem] = "todoApi">
+  </app-todo-item>
+}
+
+yang data output akan digunakan diparent
+sebagai referensi untuk delete ke service api
+
+pesan commit:
+
+buat recovery data default dan note
+
+buat data default buat recovery setelah test, db.json.small.bak
+data tinggal copy setelah test delete, cp db.json.small.bak db.json 
+membuat note angular-20.txt
+
+update style dan posisi tombol delete komponen list item-todo 
+menggunakan bootsteap warna merah pada tombol delete
+kasih jarak antar baris pada tombol delete
+
+buka remark emmit pada item-todo.ts
+buka kembali remark emit kirim input ke output
+pada todoClicked() item-todo.ts
+agar delete berfungsi lagi
